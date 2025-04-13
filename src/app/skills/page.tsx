@@ -2,43 +2,44 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { FaLaptopCode, FaDatabase, FaTools, FaPaintBrush, FaMobileAlt, FaQuestionCircle } from 'react-icons/fa';
 
 const skillsData = [
   {
     category: 'Frontend',
     skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'TypeScript'],
     color: 'from-purple-500 to-pink-500',
-    icon: '💻'
+    icon: <FaLaptopCode className="text-gray-500" />
   },
   {
     category: 'Backend',
     skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Java', 'Python', 'C++', 'SQL', 'R'],
     color: 'from-blue-500 to-teal-500',
-    icon: '🛠️'
+    icon: <FaDatabase className="text-gray-500" />
   },
   {
     category: 'DevOps',
     skills: ['Docker', 'Git', 'GitHub', 'Postman', 'AWS', 'Azure'],
     color: 'from-green-500 to-emerald-500',
-    icon: '⚙️'
+    icon: <FaTools className="text-gray-500" />
   },
   {
     category: 'Design',
     skills: ['Figma', 'Adobe XD', 'Sketch', 'Tailwind CSS'],
     color: 'from-red-500 to-orange-500',
-    icon: '🎨'
+    icon: <FaPaintBrush className="text-gray-500" />
   },
   {
     category: 'Mobile',
     skills: ['React Native', 'Flutter', 'Swift'],
     color: 'from-yellow-500 to-amber-500',
-    icon: '📱'
+    icon: <FaMobileAlt className="text-gray-500" />
   },
   {
-    category: 'Other',
+    category: 'Miscellaneous',
     skills: ['REST APIs', 'GraphQL'],
     color: 'from-indigo-500 to-violet-500',
-    icon: '✨'
+    icon: <FaQuestionCircle className="text-gray-500" />
   },
 ];
 
