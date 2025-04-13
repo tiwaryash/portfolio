@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, ExternalLink, Github } from 'lucide-react';
+import DevelopmentProcess from '../../components/DevelopmentProcess';
 
 const projects = [
   { 
@@ -72,12 +73,14 @@ export default function Projects() {
     <div className="min-h-screen bg-background text-text pt-20 px-4 md:px-8">
       <div className="flex flex-col lg:flex-row gap-8 pt-28">
         {/* Project List */}
+        
         <motion.div 
           className="lg:w-1/3"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
+          
           <div className="bg-opacity-50 rounded-xl overflow-hidden backdrop-filter backdrop-blur-lg border border-gray-700">
             {projects.map((project) => (
               <motion.div
@@ -95,9 +98,13 @@ export default function Projects() {
                 </div>
               </motion.div>
             ))}
+            
+            
           </div>
+          <DevelopmentProcess projectId={selectedProject.id} /> {/* Add this line to include the development process */}
+
         </motion.div>
-        
+
         {/* Project Details */}
         <motion.div 
           className="lg:w-2/3"
@@ -148,6 +155,8 @@ className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial
                 </div>
               </motion.div>
             </motion.div>
+
+            
             
             <motion.div 
               className="p-6"
@@ -182,11 +191,17 @@ className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial
                   <Github size={16} />
                   <span>Source Code</span>
                 </motion.a>
+                
               </div>
             </motion.div>
+            
+            
           </div>
+          
         </motion.div>
+        
       </div>
+      
       
       {/* Project Navigation Dots */}
       <motion.div 
@@ -205,6 +220,8 @@ className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial
           />
         ))}
       </motion.div>
+      
     </div>
+    
   );
 }

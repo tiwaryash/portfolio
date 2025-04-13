@@ -1,6 +1,7 @@
 // portfolio/src/components/Avatar.tsx
 'use client';
 
+import Image from 'next/image';
 import { useThemeStore } from '@/store/themeStore';
 
 const Avatar = () => {
@@ -16,10 +17,12 @@ const Avatar = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <img
+      <Image
         src={avatarImages[currentTheme as keyof typeof avatarImages]}
         alt="Avatar"
-        className="w-82 h-92 rounded-full transition-all duration-500 mt-6 ml-8" // Adjust size as needed
+        width={502}
+        height={512}
+        className="rounded-full transition-all duration-500 mt-6 ml-8"
       />
     </div>
   );
