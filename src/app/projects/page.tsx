@@ -99,12 +99,9 @@ export default function Projects() {
               </motion.div>
             ))}
             
-            
           </div>
-          <DevelopmentProcess projectId={selectedProject.id} /> {/* Add this line to include the development process */}
-
+          <DevelopmentProcess projectId={selectedProject.id as 1 | 2 | 3 | 4} /> {/* Fixed line to include the development process */}
         </motion.div>
-
         {/* Project Details */}
         <motion.div 
           className="lg:w-2/3"
