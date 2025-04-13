@@ -11,6 +11,21 @@
     --accent: 124 58 237;
   }
 
+  /* Custom cursor styles */
+  html, body {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='6' cy='6' r='5' fill='rgb(124, 58, 237)' /><path d='M6 11L12 24L6 18L0 24L6 11Z' fill='rgb(37, 99, 235)' stroke='white' stroke-width='1'/></svg>") 6 6, auto;
+  }
+
+  /* Different cursor for clickable elements */
+  a, button, [role="button"], input[type="submit"], input[type="button"], select, input[type="checkbox"], input[type="radio"] {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='6' cy='6' r='5' fill='rgb(5, 150, 105)' /><path d='M6 11L12 24L6 18L0 24L6 11Z' fill='rgb(124, 58, 237)' stroke='white' stroke-width='1'/></svg>") 6 6, pointer;
+  }
+
+  /* Text selection cursor */
+  p, h1, h2, h3, h4, h5, h6, span, div, textarea, input[type="text"] {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='8' cy='8' r='7' fill='rgba(37, 99, 235, 0.6)' stroke='white' stroke-width='1'/><rect x='6' y='6' width='4' height='16' fill='rgb(10, 10, 10)' rx='1' /></svg>") 8 8, text;
+  }
+
   body {
     @apply bg-background text-text transition-colors duration-300;
   }
