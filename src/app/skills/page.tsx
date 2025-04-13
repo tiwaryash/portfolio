@@ -8,37 +8,37 @@ const skillsData = [
   {
     category: 'Frontend',
     skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'TypeScript'],
-    color: 'from-purple-500 to-pink-500',
+    color: 'bg-primary',
     icon: <FaLaptopCode className="text-gray-500" />
   },
   {
     category: 'Backend',
     skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Java', 'Python', 'C++', 'SQL', 'R'],
-    color: 'from-blue-500 to-teal-500',
+    color: 'bg-primary',
     icon: <FaDatabase className="text-gray-500" />
   },
   {
     category: 'DevOps',
     skills: ['Docker', 'Git', 'GitHub', 'Postman', 'AWS', 'Azure'],
-    color: 'from-green-500 to-emerald-500',
+    color: 'bg-primary',
     icon: <FaTools className="text-gray-500" />
   },
   {
     category: 'Design',
     skills: ['Figma', 'Adobe XD', 'Sketch', 'Tailwind CSS'],
-    color: 'from-red-500 to-orange-500',
+    color: 'bg-primary',
     icon: <FaPaintBrush className="text-gray-500" />
   },
   {
     category: 'Mobile',
     skills: ['React Native', 'Flutter', 'Swift'],
-    color: 'from-yellow-500 to-amber-500',
+    color: 'bg-primary',
     icon: <FaMobileAlt className="text-gray-500" />
   },
   {
     category: 'Miscellaneous',
     skills: ['REST APIs', 'GraphQL'],
-    color: 'from-indigo-500 to-violet-500',
+    color: 'bg-primary',
     icon: <FaQuestionCircle className="text-gray-500" />
   },
 ];
@@ -78,7 +78,7 @@ export default function Skills() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
               <div className="flex items-center mb-6">
                 <span className="text-3xl mr-3">{category.icon}</span>
-                <h2 className={`text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${category.color}`}>
+                <h2 className={`text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-gray-500 ${category.color}`}>
                   {category.category}
                 </h2>
               </div>
