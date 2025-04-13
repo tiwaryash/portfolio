@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Navigation } from "@/components/Navigation";
 import { ThemeBackground } from '@/components/ThemeBackground';
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
             <Navigation />
             <ThemeSwitcher />
             {children}
+            <Analytics />
           </main>
         </ThemeProvider>
       </body>
