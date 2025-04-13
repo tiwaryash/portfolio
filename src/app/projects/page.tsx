@@ -10,7 +10,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
     <div className="flex min-h-screen mt-20"> {/* Added mt-20 to create space for the navbar */}
