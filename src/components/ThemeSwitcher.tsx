@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const themeOptions = [
-  { icon: '🌙', value: 'dark', label: 'Dark Mode' },
-  { icon: '☀️', value: 'light', label: 'Light Mode' },
-  { icon: '🌳', value: 'nature', label: 'Nature Mode' },
-  { icon: '🏙️', value: 'urban', label: 'Urban Mode' },
+  { icon: '🌙', value: 'dark' as const, label: 'Dark Mode' },
+  { icon: '☀️', value: 'light' as const, label: 'Light Mode' },
+  { icon: '🌳', value: 'nature' as const, label: 'Nature Mode' },
+  { icon: '🏙️', value: 'urban' as const, label: 'Urban Mode' },
 ];
 
 const soundEffects: { [key: string]: string } = {
@@ -23,14 +23,14 @@ export function ThemeSwitcher() {
   const { currentTheme, setTheme } = useThemeStore();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const playSound = (theme: string) => {
+  const playSound = (theme: keyof typeof soundEffects) => {
     if (audioRef.current) {
       audioRef.current.src = soundEffects[theme];
       audioRef.current.play();
     }
   };
 
-  const handleThemeChange = (theme: string) => {
+  const handleThemeChange = (theme: 'dark' | 'light' | 'nature' | 'urban') => {
     setTheme(theme);
     playSound(theme);
   };
