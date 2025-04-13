@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Updated import
 import { FaHome, FaLaptopCode, FaTools, FaBlog, FaEnvelope } from 'react-icons/fa'; // Importing icons
 
 const sections = [
@@ -16,11 +17,12 @@ const sections = [
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('Home');
+  const pathname = usePathname(); // Get the current pathname
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 100; // Adjust for navbar height
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
@@ -39,6 +41,14 @@ export function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Update active section based on the current route
+    const currentSection = sections.find(section => section.href === pathname);
+    if (currentSection) {
+      setActiveSection(currentSection.name);
+    }
+  }, [pathname]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-text/10 h-20">
