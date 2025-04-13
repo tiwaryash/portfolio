@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --text: 10 10 10;
+    --primary: 37 99 235;
+    --secondary: 5 150 105;
+    --accent: 124 58 237;
+  }
+
+  body {
+    @apply bg-background text-text transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
