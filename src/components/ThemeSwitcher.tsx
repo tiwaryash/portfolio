@@ -1,11 +1,11 @@
 'use client';
 
 import { useThemeStore } from '@/store/themeStore';
-import { Theme } from '@/lib/theme';
+import { themes } from '@/lib/theme';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
-const themes: { icon: string; value: Theme; label: string }[] = [
+const themeOptions = [
   { icon: '🌙', value: 'dark', label: 'Dark Mode' },
   { icon: '☀️', value: 'light', label: 'Light Mode' },
   { icon: '🌳', value: 'nature', label: 'Nature Mode' },
@@ -23,14 +23,14 @@ export function ThemeSwitcher() {
   const { currentTheme, setTheme } = useThemeStore();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const playSound = (theme: Theme) => {
+  const playSound = (theme: string) => {
     if (audioRef.current) {
       audioRef.current.src = soundEffects[theme];
       audioRef.current.play();
     }
   };
 
-  const handleThemeChange = (theme: Theme) => {
+  const handleThemeChange = (theme: string) => {
     setTheme(theme);
     playSound(theme);
   };
@@ -38,7 +38,7 @@ export function ThemeSwitcher() {
   return (
     <div className="fixed top-24 right-4 z-50">
       <div className="flex gap-2 p-2 bg-background/80 backdrop-blur-sm rounded-full shadow-lg">
-        {themes.map((theme) => (
+        {themeOptions.map((theme) => (
           <motion.button
             key={theme.value}
             onClick={() => handleThemeChange(theme.value)}
