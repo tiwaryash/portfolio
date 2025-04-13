@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Theme, themes } from '@/lib/theme';
+import { themes } from '@/lib/theme';
 
 interface ThemeState {
-  currentTheme: Theme;
-  setTheme: (theme: Theme) => void;
+  currentTheme: keyof typeof themes;
+  setTheme: (theme: keyof typeof themes) => void;
 }
 
 export const useThemeStore = create<ThemeState>()(
