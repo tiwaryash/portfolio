@@ -13,10 +13,10 @@ const themeOptions = [
 ];
 
 const soundEffects: { [key: string]: string } = {
-  dark: '/sounds/rock_guitar.mp3',
+  dark: '/sounds/beer_opening.mp3',
   light: '/sounds/sun_pop.mp3',
   nature: '/sounds/leaf_fall.mp3',
-  urban: '/sounds/car_horn.mp3',
+  urban: '/sounds/car_pass.mp3',
 };
 
 export function ThemeSwitcher() {
