@@ -3,7 +3,7 @@
 import { useThemeStore } from '@/store/themeStore';
 import { themes } from '@/lib/theme';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useSidebarStore } from '@/store/sidebarStore';
 import { usePathname } from 'next/navigation';
 
@@ -26,10 +26,22 @@ export function ThemeSwitcher() {
   const { isOpen } = useSidebarStore();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const pathname = usePathname();
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const getPosition = () => {
-    if (isMobile ) {
+    if (isMobile) {
       return isOpen 
         ? 'top-auto bottom-24 left-1/2 -translate-x-1/2'
         : 'top-0 right-16 h-20 items-center';
