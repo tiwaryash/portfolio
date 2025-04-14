@@ -35,12 +35,12 @@ const sections = [
 ];
 export default function Home() {
   return (
-    <div className="min-h-screen flex">
-      <div className="w-1/3 flex justify-center items-center">
-        <AudioPlayer /> {/* Add the AudioPlayer component here */}
-        <Avatar /> {/* Avatar on the left side */}
+    <div className="min-h-screen flex flex-col md:flex-row">
+      <div className="w-full md:w-1/3 flex justify-center items-center pt-24 md:pt-0">
+        <AudioPlayer />
+        <Avatar />
       </div>
-      <div className="w-2/3 flex flex-col items-center justify-center">
+      <div className="w-full md:w-2/3 flex flex-col items-center justify-center pt-8 md:pt-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -62,7 +62,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Full Stack Developer
+            Software Engineer
           </motion.h2>
           
           <motion.p 

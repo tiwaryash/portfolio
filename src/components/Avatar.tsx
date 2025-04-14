@@ -22,7 +22,7 @@ const Avatar = () => {
         alt="Avatar"
         width={502}
         height={512}
-        className="rounded-full transition-all duration-500 mt-6 ml-8"
+        className="rounded-full transition-all duration-500 mt-6 ml-8 w-64 md:w-auto"
       />
     </div>
   );
