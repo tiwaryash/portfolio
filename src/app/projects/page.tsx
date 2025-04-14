@@ -71,16 +71,24 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-background text-text pt-20 px-4 md:px-8">
-      <div className="flex flex-col lg:flex-row gap-8 pt-28">
+      {/* Header Section */}
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-5xl md:text-7xl font-bold text-primary">Projects</h1>
+      </motion.div>
+
+      <div className="flex flex-col lg:flex-row gap-8 pt-8">
         {/* Project List */}
-        
         <motion.div 
           className="lg:w-1/3"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          
           <div className="bg-opacity-50 rounded-xl overflow-hidden backdrop-filter backdrop-blur-lg border border-gray-700">
             {projects.map((project) => (
               <motion.div
@@ -98,10 +106,10 @@ export default function Projects() {
                 </div>
               </motion.div>
             ))}
-            
           </div>
-          <DevelopmentProcess projectId={selectedProject.id as 1 | 2 | 3 | 4} /> {/* Fixed line to include the development process */}
+          <DevelopmentProcess projectId={selectedProject.id as 1 | 2 | 3 | 4} />
         </motion.div>
+
         {/* Project Details */}
         <motion.div 
           className="lg:w-2/3"
@@ -111,7 +119,8 @@ export default function Projects() {
         >
           <div className="bg-opacity-50 rounded-xl overflow-hidden backdrop-filter backdrop-blur-lg border border-gray-700 h-full min-h-[650px]">
             <motion.div 
-className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial={{ opacity: 0 }}
+              className="relative overflow-hidden h-[32rem] md:h-[30rem]"
+              initial={{ opacity: 0 }}
               animate={{ opacity: isLoading ? 0 : 1 }}
               transition={{ duration: 0.5 }}
             >
@@ -153,8 +162,6 @@ className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial
               </motion.div>
             </motion.div>
 
-            
-            
             <motion.div 
               className="p-6"
               key={selectedProject.id}
@@ -188,17 +195,11 @@ className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial
                   <Github size={16} />
                   <span>Source Code</span>
                 </motion.a>
-                
               </div>
             </motion.div>
-            
-            
           </div>
-          
         </motion.div>
-        
       </div>
-      
       
       {/* Project Navigation Dots */}
       <motion.div 
@@ -217,8 +218,6 @@ className="relative overflow-hidden h-[32rem] md:h-[30rem]"              initial
           />
         ))}
       </motion.div>
-      
     </div>
-    
   );
 }

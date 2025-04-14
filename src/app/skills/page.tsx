@@ -56,7 +56,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-primary bg-gradient-to-r">
-            My Skills
+            Skills
           </h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Technologies and tools I work with to create amazing digital experiences

@@ -167,7 +167,7 @@ export default function DevelopmentProcess({ projectId = 1 }: { projectId: keyof
   
   return (
     <div className="mt-8 p-4 border-t border-gray-700">
-      <div className="flex justify-between items-center mb-3">
+      <div className="flex justify-between items-center mb-3 ">
         <h3 className="text-sm uppercase text-gray-400">Development Process</h3>
         <div className="flex items-center">
           <div className="w-24 bg-gray-700 rounded-full h-1.5 mr-2">
