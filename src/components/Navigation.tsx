@@ -92,39 +92,29 @@ export function Navigation() {
         </div>
       </div>
       
-      {/* Mobile sidebar overlay */}
+      {/* Mobile menu - horizontal below navbar */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-30"
+          className="fixed top-20 left-0 right-0 bg-background border-b border-text/10 z-30"
           onClick={() => setIsOpen(false)}
         >
-          {/* Sidebar content */}
           <div 
-            className="absolute top-0 right-0 w-64 h-full bg-background border-l border-text/10 p-4"
+            className="w-full px-4 py-3 bg-background"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-lg font-bold text-text">Index</h2>
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="text-text/60 hover:text-text"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2 justify-center">
               {sections.map((section) => (
                 <Link 
                   key={section.name} 
                   href={section.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`flex items-center px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     activeSection === section.name
-                      ? 'text-primary'
-                      : 'text-text/60 hover:text-text'
+                      ? 'text-primary bg-text/5'
+                      : 'text-text/60 hover:text-text hover:bg-text/5'
                   }`}
                 >
-                  <span className="mr-3">{section.icon}</span>
+                  <span className="mr-2">{section.icon}</span>
                   <span>{section.name}</span>
                 </Link>
               ))}

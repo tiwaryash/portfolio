@@ -5,6 +5,7 @@ import { themes } from '@/lib/theme';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useSidebarStore } from '@/store/sidebarStore';
+import { usePathname } from 'next/navigation';
 
 const themeOptions = [
   { icon: '🌙', value: 'dark' as const, label: 'Dark Mode' },
@@ -24,6 +25,19 @@ export function ThemeSwitcher() {
   const { currentTheme, setTheme } = useThemeStore();
   const { isOpen } = useSidebarStore();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const pathname = usePathname();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  const getPosition = () => {
+    if (isMobile ) {
+      return isOpen 
+        ? 'top-auto bottom-24 left-1/2 -translate-x-1/2'
+        : 'top-0 right-16 h-20 items-center';
+    }
+    return isOpen 
+      ? 'top-auto bottom-24 left-1/2 -translate-x-1/2'
+      : 'top-24 right-4';
+  };
 
   const playSound = (theme: keyof typeof soundEffects) => {
     if (audioRef.current) {
@@ -38,11 +52,7 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <div className={`fixed z-50 transition-all duration-300 ${
-      isOpen 
-        ? 'top-auto bottom-24 left-1/2 -translate-x-1/2' 
-        : 'top-24 right-4'
-    }`}>
+    <div className={`fixed z-50 transition-all duration-300 flex ${getPosition()}`}>
       <div className="flex gap-2 p-2 bg-background/80 backdrop-blur-sm rounded-full shadow-lg">
         {themeOptions.map((theme) => (
           <motion.button
