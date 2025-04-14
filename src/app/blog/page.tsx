@@ -84,7 +84,7 @@ export default function Blog() {
                   className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                     activeCategory === category 
                       ? 'bg-primary text-white' 
-                      : 'bg-gray-200 text-gray-700 hover:bg-primary'
+                      : 'bg-white text-gray-700 hover:bg-primary hover:text-white'
                   }`}
                 >
                   {category}
@@ -119,10 +119,11 @@ export default function Blog() {
                 <div className="absolute top-0 left-0 w-2 h-full bg-primary"></div>
                 <div className="pl-6 p-6">
                   <div className="flex justify-between items-start mb-2">
-                    <h2 className="text-2xl font-bold text-primary group-hover:text-primary transition-colors">
+                    <h2 className="text-2xl font-bold text-primary relative group">
                       <Link href={`/blog/${post.slug}`} className="hover:underline">
                         {post.title}
                       </Link>
+                      <span className="absolute left-0 bottom-0 h-1 w-full bg-primary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                     </h2>
                     <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
                       {post.category}
@@ -137,9 +138,10 @@ export default function Blog() {
                     })}</p>
                     <Link 
                       href={`/blog/${post.slug}`}
-                      className="text-primary font-medium flex items-center group-hover:underline"
+                      className="text-primary font-medium flex items-center group relative"
                     >
                       Read more
+                      <span className="absolute left-0 bottom-0 h-1 w-full bg-primary transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                       <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>

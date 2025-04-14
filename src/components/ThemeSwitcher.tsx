@@ -4,6 +4,7 @@ import { useThemeStore } from '@/store/themeStore';
 import { themes } from '@/lib/theme';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
+import { useSidebarStore } from '@/store/sidebarStore';
 
 const themeOptions = [
   { icon: '🌙', value: 'dark' as const, label: 'Dark Mode' },
@@ -21,6 +22,7 @@ const soundEffects: { [key: string]: string } = {
 
 export function ThemeSwitcher() {
   const { currentTheme, setTheme } = useThemeStore();
+  const { isOpen } = useSidebarStore();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const playSound = (theme: keyof typeof soundEffects) => {
@@ -36,7 +38,11 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <div className="fixed top-24 right-4 z-50">
+    <div className={`fixed z-50 transition-all duration-300 ${
+      isOpen 
+        ? 'top-auto bottom-24 left-1/2 -translate-x-1/2' 
+        : 'top-24 right-4'
+    }`}>
       <div className="flex gap-2 p-2 bg-background/80 backdrop-blur-sm rounded-full shadow-lg">
         {themeOptions.map((theme) => (
           <motion.button
