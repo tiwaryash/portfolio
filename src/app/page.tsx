@@ -9,7 +9,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const sections = [
   {
-    title: 'Project',
+    title: 'Projects',
     description: 'Explore my latest projects and work',
     href: '/projects',
     icon: '💻'
@@ -35,12 +35,12 @@ const sections = [
 ];
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="w-full md:w-1/3 flex justify-center items-center pt-24 md:pt-0">
-        <AudioPlayer />
-        <Avatar />
+    <div className="min-h-screen flex">
+      <div className="w-1/3 flex justify-center items-center">
+        <AudioPlayer /> {/* Add the AudioPlayer component here */}
+        <Avatar /> {/* Avatar on the left side */}
       </div>
-      <div className="w-full md:w-2/3 flex flex-col items-center justify-center pt-8 md:pt-0">
+      <div className="w-2/3 flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
