@@ -9,7 +9,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const sections = [
   {
-    title: 'Projects',
+    title: 'Project',
     description: 'Explore my latest projects and work',
     href: '/projects',
     icon: '💻'
