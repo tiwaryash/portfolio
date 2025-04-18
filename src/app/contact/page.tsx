@@ -103,7 +103,7 @@ export default function Contact() {
               
               <div className="flex flex-wrap gap-4">
                 <motion.a 
-                  href="https://twitter.com/yourhandle" 
+                  href="https://x.com/tyash26" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-2 px-4 py-2 text-white bg-primary hover:bg-secondary rounded-lg border border-gray-500 transition-all"
@@ -113,7 +113,7 @@ export default function Contact() {
                 </motion.a>
                 
                 <motion.a 
-                  href="https://linkedin.com/in/yourhandle" 
+                  href="https://www.linkedin.com/in/yash-tiwary" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-2 px-4 py-2 text-white bg-primary hover:bg-secondary rounded-lg border border-gray-500 transition-all"
@@ -123,7 +123,7 @@ export default function Contact() {
                 </motion.a>
                 
                 <motion.a 
-                  href="https://github.com/yourhandle" 
+                  href="https://github.com/tiwaryash" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-2 px-4 py-2 text-white bg-primary hover:bg-secondary rounded-lg border border-gray-500 transition-all"

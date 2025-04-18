@@ -11,10 +11,10 @@ const projects = [
     name: 'Nexus Mind: AI-Powered Knowledge Discovery',
     description: 'An AI platform that connects disparate information sources to discover hidden patterns and insights.',
     image: '/project_images/nexus.png',
-    tags: ['AI', 'Machine Learning', 'Knowledge Graph'],
+    tags: ['RAG', 'Cohere AI', 'Knowledge Graph'],
     links: {
-      demo: 'https://example.com/nexus',
-      github: 'https://github.com/example/nexus'
+      demo: 'https://nexus-6vj6smxw1-yash9274s-projects.vercel.app',
+      github: 'https://github.com/tiwaryash/nexus'
     }
   },
   { 
