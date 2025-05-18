@@ -84,7 +84,7 @@ export default function Contact() {
                   <div className="p-2 bg-primary rounded-full">
                     <FiPhone className="text-white" />
                   </div>
-                  <span className="text-gray-500">+91 9222222897</span>
+                  <span className="text-gray-500"></span>
                 </div>
               </div>
             </motion.div>
